@@ -14,6 +14,15 @@ class AuthController extends Controller
         return view('login');
     }
 
+    public function login_action(Request $request)
+    {
+        $validator = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+        dd($validator);
+    }
+
     public function register(Request $request)
     {
         return view('register');
