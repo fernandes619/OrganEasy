@@ -40,7 +40,7 @@
 
     <section class="list">
         <div class="list-header">
-            <select class="list_header-select" id="">
+            <select class="list_header-select" onchange="chanceTaskStatusFilter(this)">
                 <option value="all_task">Todas as tarefas</option>
                 <option value="task_pending">Pendentes</option>
                 <option value="task_done">Realizadas</option>
@@ -54,6 +54,27 @@
             @endforeach
         </div>
     </section>
+
+    <script>
+        function chanceTaskStatusFilter(e) {
+            showAllTasks();
+            if (e.value == 'task_pending') {
+                document.querySelectorAll('.task_done').forEach(function(element) {
+                    element.style.display = 'none';
+                });
+            } else if (e.value == 'task_done') {
+                document.querySelectorAll('.task_pending').forEach(function(element) {
+                    element.style.display = 'none';
+                });
+            }
+        }
+
+        function showAllTasks() {
+            document.querySelectorAll('.task').forEach(function(element) {
+                element.style.display = 'block';
+            });
+        }
+    </script>
 
     <script>
         async function taskUpdate(element) {
