@@ -24,8 +24,7 @@
 
             <x-form.text_input type="email" name="email" label="Email" placeholder="example@email.com" />
 
-            <x-form.text_input type="password" name="password" label="Senha"
-                placeholder="Não use senhas de outras redes sociais" />
+            <x-form.text_input type="password" name="password" label="Senha" placeholder="Senha" />
 
             <x-form.text_input type="password" name="password_confirmation" label="Confirme sua senha"
                 placeholder="Confirme sua senha" />
