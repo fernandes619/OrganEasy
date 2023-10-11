@@ -62,4 +62,11 @@ class AuthController extends Controller
 
         return redirect(route('login'));
     }
+
+    public function update()
+    {
+        Auth::logout();
+
+        return redirect(route('login'));
+    }
 }
